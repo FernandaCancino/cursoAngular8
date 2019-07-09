@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {Empleado} from './Empleado';
-import { timingSafeEqual } from 'crypto';
+//import { timingSafeEqual } from './crypto';
 
 
 @Component ({
@@ -15,6 +15,7 @@ export class EmpleadoComponent{
     public trabajadores :Array <Empleado>;
     public trabajador_externo:boolean;
     public color:string;
+    public color_seleccionado:string;
 
 
     constructor(){
@@ -28,7 +29,8 @@ export class EmpleadoComponent{
         ];
 
         this.trabajador_externo = false;
-        this.color = 'green';
+        this.color = 'blue';
+        this.color_seleccionado = 'yellow';
 
     }
 
@@ -43,4 +45,7 @@ export class EmpleadoComponent{
 
     }
 
+    logColorSeleccionado(){
+        console.log(this.color_seleccionado);
+    }
 }

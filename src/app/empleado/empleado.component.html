@@ -1,18 +1,28 @@
 <h1>{{tittle_empleado}}</h1>
 
-    <hr>
+    <hr/>
 
     <h3>Selector de colores</h3>
-    <input type="text" >
+    <button (click) = "logColorSeleccionado()">Mostrar log con color seleccionado</button>
+    <input type="text" [(ngModel)]="color_seleccionado" />
+    <pre [style.border]= "color_seleccionado == 'red' ? '5px solid black' : '1px solid white'">
+        <strong>Color elegido:</strong>
+        {{color_seleccionado}}
+    </pre>
+
     <div [ngStyle] = "{
-                        'background': color,
+                        'background': color_seleccionado,
                         'width' : '200px',
-                        'height' : '200px'
+                        'height' : '200px',
+                        'float' : 'right',
+                        'margin-right': '69%'
+                        
     }">
-
     </div>
+    <div style= "clear:both"></div>
+    
 
-    <hr>
+    <hr/>
 
     <h3>Colores Switch</h3>
     <!-- ngSwitch + valor o propiedad que se cambiara
