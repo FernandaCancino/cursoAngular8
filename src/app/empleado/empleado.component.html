@@ -5,7 +5,29 @@
     <h3>Selector de colores</h3>
     <button (click) = "logColorSeleccionado()">Mostrar log con color seleccionado</button>
     <input type="text" [(ngModel)]="color_seleccionado" />
-    <pre [style.border]= "color_seleccionado == 'red' ? '5px solid black' : '1px solid white'">
+    
+    <!-- DIFERENTES FORMAS DE UTILIZAR NGCLASS
+        
+        se puede agregar como atributo en una etiqueta, en este caso se podría agregar a pre
+         [class.fondoAzul] = "color_seleccionado == 'blue' " -->
+    <!--  
+        [ngClass] = "{
+                        fondoAzul: color_seleccionado == 'blue'
+                        ,fondoVerde: color_seleccionado == 'green'
+                        ,letraGrande: 1 == 1
+                    }" 
+    -->
+    <!-- 
+        [ngClass] = "['fondoAzul', 'letraGrande']"
+     -->
+
+    <pre [style.border]= "color_seleccionado == 'red' ? '5px solid black' : '1px solid white'"
+         [ngClass] = "{
+            fondoAzul: color_seleccionado == 'blue'
+            ,fondoVerde: color_seleccionado == 'green'
+            ,letraGrande: 1 == 1
+        }" 
+    > 
         <strong>Color elegido:</strong>
         {{color_seleccionado}}
     </pre>

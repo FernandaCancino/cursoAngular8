@@ -37,7 +37,7 @@ export class FrutaComponent{
     ngOnInit (){
         this.cambiarNombre();
         this.cambiarEdad(100);
-        alert( this.nombre + this.edad);
+        //alert( this.nombre + this.edad);
         console.log( this.nombre + this.edad);
     }
 
