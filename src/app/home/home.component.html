@@ -1,1 +1,27 @@
 <h2>{{titulo}}</h2>
+
+<br>
+<!-- {{fecha | date: 'dd/MM/yyyy'  }} -->
+    {{fecha | date: 'fullDate' | uppercase | lowercase}}
+<br>
+
+<!-- aca utilizamos el pipe creado...  -->
+{{5 | conversor: 7}}
+
+<hr [ngClass] = "['lineaBlanca']">
+<input type="text" [(ngModel)] = "prenda_a_guardar">
+<button (click) = "guardarPrenda()"> Añadir Prenda </button>
+
+<p *ngIf="prenda_a_guardar"> 
+    La prenda a guardar es: <strong>{{prenda_a_guardar}}</strong>
+</p>
+
+<h3>Listado de prendas de ropa</h3>
+<ul>
+    <!-- para saber el indice de la 'ropa' que deseo eliminar  let i = index-->
+    <li *ngFor= "let prenda of listado_ropa; let i = index">
+        {{prenda}}
+        <button (click) = "eliminarPrenda(i)">Eliminar</button>
+    </li>
+</ul>
+
