@@ -7,6 +7,7 @@ import { FrutaComponent } from './fruta/fruta.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { HomeComponent } from './home/home.component';
 import { CochesComponent } from './coches/coches.component';
+import { PlantillasComponent} from './plantillas/plantillas.component';
 
 const appRoutes: Routes = [
     {path: '', component: HomeComponent} //ruta inicial - cuando la ruta no tenga nada, cargara el componente de Empleado
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     //en este route indicamos que en contacto podemos recibir un parametro y utilizarlo
     ,{path: 'contacto/:page', component:ContactoComponent}
     ,{path: 'coches', component:CochesComponent}
+    ,{path: 'plantillas', component: PlantillasComponent}
     ,{path: '**', component: HomeComponent} //ruta por defecto, Cuando la ruta falle, cuando se produce un error se cargara el empleado component ERROR 404
 ]
 /*

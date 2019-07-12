@@ -28,12 +28,13 @@ export class PeticionesServices{
     //con este metodo realizaremos una peticion por get a la url indicada en el constructor
     getArticulos(){
 
-        //peticion ajax por get
+        //peticion ajax por get.
+        //simplemente se devuelve la respuesta que nos de el metodo.
         return this._http.get(this.url)
         // como recoger el resultado de la peticion http
-                         .map(res => res.json());
+                          .pipe(map(res => res.json()));
         
-        //se convierte el json a objeto usable para js
+        //se convierte el json a coleccion de objeto usable para js
 
     }
 

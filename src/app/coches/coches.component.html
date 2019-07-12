@@ -70,3 +70,16 @@
     </ul>
 
 </div>
+
+<div class="listado">
+    <h3>Listado de Articulos</h3>
+    <!-- para hacer un efecto de 'cargando...' -->
+    <ul *ngIf="articulos">
+        <li *ngFor="let articulo of articulos">
+            {{articulo.userId}} - {{articulo.id}} - {{articulo.title}}
+        </li>
+    </ul>
+    <span *ngIf="!articulos">CARGANDO LISTADO...</span>
+
+</div>
+

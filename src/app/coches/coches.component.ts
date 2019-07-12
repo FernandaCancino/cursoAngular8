@@ -13,6 +13,7 @@ export class CochesComponent{
 
     public coche: Coche;
     public coches: Array<Coche>;
+    public articulos;
 
 
     constructor(
@@ -41,6 +42,24 @@ onSubmit(){
 
 ngOnInit(){
     console.log(this._peticionesServices.getPrueba());
+
+    //para poder recoger el resultado o el error se utiliza '.subscribe()'
+    this._peticionesServices.getArticulos().subscribe(
+                    result => {
+                        this.articulos = result;
+                         console.log(result);
+
+                        if(!this.articulos){
+                            console.log("Error en el servidor");
+                        }
+
+                    }
+                    ,
+                    error => {
+                        var errorMessage = <any>error;
+                        console.log(errorMessage);
+                    }
+                );
     
 }
 
